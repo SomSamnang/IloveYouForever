@@ -1,119 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You</title>
-<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Love You</title>
+  <head>
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing: border-box;
-            font-family: sans-serif;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: rgb(255, 0, 166);
+      }
+      .wrapper {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        background-color: rgb(36, 235, 53);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      h2 {
+        font-size: 30px;
+        margin: 15px;
+      }
+      .instruction {
+        animation: colorChange 10s infinite;
+      }
+      .question {
+        animation: colorChange 10s infinite;
+      }
+      @keyframes colorChange {
+        0% {
+          color: red;
         }
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color:rgb(255, 0, 166);
+        10% {
+          color: orange;
         }
-        .wrapper{
-            position: relative;
-            width: 600px;
-            height: 400px;
-            background-color:rgb(38, 255, 0);
-            border-radius:20px;
-            display: flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-    
+        20% {
+          color: yellow;
         }
-        h2{
-            
-            font-size:30px;
-            color:blue;
-            margin:15px;
-          
+        30% {
+          color: green;
         }
-        .btn-group{
-            width: 100%;
-            height:40px;
-            display: flex;
-            justify-content:center;
-    
+        40% {
+          color: blue;
         }
-        button{
-            position: absolute;
-            width: 100px;
-            height: inherit;
-            font-size:30px;
-            background-color:green;
-            border-radius:15px;
-            border-color:rgb(255, 255, 255);
-            outline:none;
+        50% {
+          color: indigo;
         }
-        button:nth-child(2){
-            margin-left:200px;
-            background-color: rgb(255, 0, 0);
-            color:rgb(255, 255, 255);
+        60% {
+          color: violet;
         }
-        button:nth-child(1){
-            margin-right:200px;
-            background-color: green;
-            color:white;
+        70% {
+          color: pink;
         }
-          
+        80% {
+          color: teal;
+        }
+        90% {
+          color: brown;
+        }
+        100% {
+          color: red;
+        }
+      }
+      .btn-group {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        position: absolute;
+        width: 100px;
+        height: inherit;
+        font-size: 30px;
+        background-color: green;
+        border-radius: 15px;
+        border-color: rgb(255, 255, 255);
+        outline: none;
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+      }
+      button:nth-child(2) {
+        margin-left: 200px;
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
+      }
+      button:nth-child(1) {
+        margin-right: 200px;
+        background-color: rgb(0, 255, 0);
+        color: white;
+      }
+      /* Hover effects for the Yes button */
+      button.yes-btn:hover {
+        background-color: rgb(255, 0, 153);
+        color: black;
+        transform: scale(1.1); /* Slightly increase size */
+      }
+      /* Hover effects for the No button */
+      button.no-btn:hover {
+        background-color: rgb(0, 0, 255);
+        color: yellow;
+        transform: scale(1.1); /* Slightly increase size */
+      }
+      /* Initially hide the image */
+      img {
+        display: none;
+      }
     </style>
-    </head>
-    <body>
-       
-            <div class="wrapper"> 
-                <img style="height: 200px;" src="assets/Image/LOVE.jpg" alt="">
+  </head>
+  <body>
+    <div class="wrapper">
+      <img style="height: 200px" src="assets/Image/LOVE.jpg" alt="LOVE" />
 
-                 <h2 class="question" aling="center" > ❣️❣️❣️❣️❣️❣️<br></h2> 
-            <div class="btn-group">
-                <button class="yes-btn">Yes</button>
-                <button class="no-btn">No</button>
-    
-        </div>
-    
+      <h2 class="instruction" align="center">
+        Hello! Welcome My Website..! :)<br />
+      </h2>
+      <h2 class="question" align="center">❣️❣️❣️Jannie Jannie❣️❣️❣️<br /></h2>
+      <div class="btn-group">
+        <button class="yes-btn">Yes</button>
+        <button class="no-btn">No</button>
+      </div>
     </div>
-    
+
     <script>
-         
-            const wrapper = document.querySelector('.wrapper');
-            const question = document.querySelector('.question');
-            const yesBtn = document.querySelector('.yes-btn');
-           
-            yesBtn.addEventListener('click', () => {
-                question.innerHTML = ' I Love You So Much  Jannie Jannie❣️:)';
-                
-            });
-            noBtn.style.left = '10%';
-            noBtn.style.top = '10%';
+      const instruction = document.querySelector(".instruction");
+      const question = document.querySelector(".question");
+      const yesBtn = document.querySelector(".yes-btn");
+      const noBtn = document.querySelector(".no-btn");
+      const image = document.querySelector("img"); // Select the image
 
-            noBtn.addEventListener('mouseover', () => {
-                
-                const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
-                const j = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.height)) + 1;
-                // noBtn.style.left = i + 'px';
-                noBtn.style.top = j + 'px';
-            });
-        
-            noBtn.style.left = '10%';
-            noBtn.style.top = '10%';
+      yesBtn.addEventListener("click", () => {
+        // Remove the instruction text
+        instruction.style.display = "none";
 
-            noBtn.addEventListener('mouseover', () => {
-                
-                const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
-                const j = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.height)) + 1;
-                // noBtn.style.left = i + 'px';
-                noBtn.style.top = j + 'px';
-            });
+        // Show the image
+        image.style.display = "block";
 
-        </script>
-    </body>
-    </html>
+        // Update the question text
+        question.innerHTML = "I Love You So Much Jannie Jannie❣️ :)";
+      });
+
+      noBtn.addEventListener("click", () => {
+        // Remove the instruction text
+        instruction.style.display = "none";
+
+        // Show the image
+        image.style.display = "block";
+
+        // Update the question text with a sad emoji
+        question.innerHTML = "Sorry, I Can't Love You..! 😔 :)";
+
+        // Redirect to home page after 10 seconds
+        setTimeout(() => {
+          window.location.href = "index.html"; // Change "index.html" to your desired home page URL
+        }, 10000); // 10 seconds
+      });
+    </script>
+  </body>
+</html>
